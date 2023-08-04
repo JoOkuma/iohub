@@ -183,7 +183,7 @@ class MicromanagerOmeTiffReader(ReaderBase):
                         )
                         self._stage_positions.append(pos)
 
-                for ch in self.mm_meta["Summary"]["ChNames"]:
+                for ch in self.mm_meta["Summary"].get("ChNames", []):
                     self.channel_names.append(ch)
 
             # dimensions based on mm metadata
